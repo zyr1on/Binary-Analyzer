@@ -9,6 +9,7 @@ from core.binary_info import BinaryInfo
 from core.security_checks import SecurityChecker
 from core.entropy import EntropyAnalyzer
 from core.packer_detector import PackerDetector
+from core.capabilities import CapabilityScanner
 
 def print_section(title):
     # standard separator for clean text output
@@ -55,6 +56,14 @@ def analyze_binary(filepath):
         packer.display()
     except Exception:
         print("[!] Packer detection failed.")
+
+    print_section("Capabilities & IOCs")
+    try:
+        cap_scanner = CapabilityScanner(filepath)
+        cap_scanner.display()
+    except Exception:
+        print("[!] Capability scan failed.")
+        
     
     print(f"\n[INFO] Analysis Completed.")
 
