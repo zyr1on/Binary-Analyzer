@@ -57,15 +57,15 @@ Capabilities (-c):   Extracts network/injection APIs and network indicators.
 ## Examples
 Run a full analysis on a sample:
 ```
-> python3 main.py a.exe
+> python3 binary_analyzer.py a.exe
 or
-> python3 main.py a.out
+> python3 binary_analyzer.py a.out
 ```
 Check only the security mitigations and entropy:
 ```
-python3 main.py malware.exe -s -e
+python3 binary_analyzer.py malware.exe -s -e
 ```
 Check capabilities and IOCs:
 ```
-python3 main.py malware.exe -c
+python3 binary_analyzer.py malware.exe -c
 ```
